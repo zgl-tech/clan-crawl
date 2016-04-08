@@ -1,0 +1,5 @@
+scrapy==1.0
+simplejson==3.7.3
+click==4.1
+#scrapyd==1.1.0
+#scrapyd-client==1.0.1
