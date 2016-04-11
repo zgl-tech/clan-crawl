@@ -1,0 +1,13 @@
+#  coding: utf-8
+
+DEBUG = False
+
+headers = {'User-Agent': 'xxx', 'Referer': 'xxx'}
+cookies = {}
+
+merge_top_url = 'http://buluo.qq.com/cgi-bin/bar/card/merge_top'
+fans_url = 'http://buluo.qq.com/cgi-bin/bar/card/fans'
+
+fans_page_num = 20
+
+start_uins = ['xxx']
