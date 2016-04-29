@@ -48,14 +48,22 @@ class ClanSpider(Spider):
             yield self._make_request(url, self.parse_user, {'uin': uin})
 
     def parse_user(self, response):
+        uin = str(response.meta['uin'])
         data = _parse_json(response.body_as_unicode())
-        yield data['result']['userinfo']
+        user = data['result']['userinfo']
+        user['__type'] = 'user'
+        user['uin'] = uin
+        yield user
         for followbar in data['result']['followbars']:
+            followbar['bid'] = str(followbar['bid'])
+            followbar['__type'] = 'clan'
             yield followbar
+            follow = {'__type': 'follow', 'uin': uin, 'bid': followbar['bid']}
+            yield follow
         url = _make_url(config.fans_url, targetuin=response.meta['uin'],
                         start=0, num=config.fans_page_num)
         yield self._make_request(url, self.parse_fans,
-                                 {'uin': response.meta['uin'], 'start': 0})
+                                 {'uin': uin, 'start': 0})
 
     def parse_fans(self, response):
         data = _parse_json(response.body_as_unicode())

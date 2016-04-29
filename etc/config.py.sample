@@ -2,6 +2,12 @@
 
 DEBUG = False
 
+mongodb_config = {
+    'host': 'localhost',
+    'port': 27017,
+}
+mongodb_dbname = 'clan_crawl'
+
 headers = {'User-Agent': 'xxx', 'Referer': 'xxx'}
 cookie_str = 'xxx'
 
