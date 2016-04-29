@@ -3,7 +3,7 @@
 DEBUG = False
 
 headers = {'User-Agent': 'xxx', 'Referer': 'xxx'}
-cookies = {}
+cookie_str = 'xxx'
 
 merge_top_url = 'http://buluo.qq.com/cgi-bin/bar/card/merge_top'
 fans_url = 'http://buluo.qq.com/cgi-bin/bar/card/fans'
