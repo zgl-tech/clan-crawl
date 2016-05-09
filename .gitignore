@@ -64,3 +64,4 @@ target/
 # project
 install.sh
 exclude.txt
+./idea
