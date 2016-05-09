@@ -54,7 +54,7 @@ class ClanSpider(Spider):
         user = data['result']['userinfo']
         user['__type'] = 'user'
         user['uin'] = uin
-        print json.dumps(user,indent=4,ensure_ascii=False)
+        # print json.dumps(user,indent=4,ensure_ascii=False)
         yield user
 
         # getting user-clan following information
